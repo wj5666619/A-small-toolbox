@@ -1,0 +1,39 @@
+# ===== 二进制与安装包（通过 GitHub Releases 分发，不入库） =====
+*.exe
+*.msi
+
+# ===== 第三方组件压缩包（打包产物，不入库） =====
+*_tool.zip
+ffmpeg_tool.zip
+gcm_tool.zip
+sam_tool.zip
+clean_tool.zip
+video_tool.zip
+dnkh_tool.zip
+
+# ===== 运行时部署目录 =====
+video_tool/
+gcm_tool/
+sam_tool/
+clean_tool/
+dnkh_tool/
+
+# ===== 本地运行配置与日志 =====
+config.txt
+ui.txt
+shutdown_history.log
+error.log
+*.log
+
+# ===== 构建工具与临时文件 =====
+tools/
+*.tmp
+build_log.txt
+build_result.txt
+build_ins.txt
+
+# ===== 编辑器 / 系统 =====
+.vs/
+.idea/
+Thumbs.db
+Desktop.ini
