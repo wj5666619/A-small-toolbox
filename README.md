@@ -28,15 +28,6 @@
 - 圆角渐变按钮、进度环、侧栏渐变选中
 - 托盘常驻：关闭窗口不中断运行中的任务
 
-## 📥 下载与发布 / Download
-
-**重要：GitHub 单文件上传上限为 100MB，而本程序主程序约 136MB、安装包约 165MB，无法直接入库。**
-
-请使用以下方式分发：
-
-1. **GitHub Releases**：在 Release 页以附件形式上传 `小工具箱_安装程序.exe`（Releases 附件上限 2GB，推荐方式）
-2. **网盘**：蓝奏云 / 百度网盘 / 123 云盘等外链
-3. **仓库内只保留源码**，不存放二进制与组件压缩包（见下方目录结构）
 
 ## 🚀 快速开始 / Quick Start
 
@@ -45,27 +36,7 @@
 
 ## 🏗️ 从源码构建 / Build from Source
 
-环境要求：Windows + .NET Framework 4.8 SDK（含 csc.exe）
 
-```bat
-rem 编译主程序（需先准备 gcm_tool.zip / sam_tool.zip / clean_tool.zip / video_tool.zip / dnkh_tool.zip 组件包与 定时关机.ico 图标）
-"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /optimize+ /codepage:65001 ^
-  /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll /r:System.Web.Extensions.dll ^
-  /win32icon:定时关机.ico ^
-  /resource:gcm_tool.zip,GcmZip /resource:sam_tool.zip,SamZip /resource:clean_tool.zip,CleanZip ^
-  /resource:video_tool.zip,VideoZip /resource:dnkh_tool.zip,DnkhZip ^
-  /out:小工具箱.exe 定时关机.cs
-
-rem 编译安装器（内嵌主程序 + ffmpeg_tool.zip + sam_tool.zip + clean_tool.zip）
-"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /optimize+ /codepage:65001 ^
-  /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll /r:System.Web.Extensions.dll ^
-  /win32icon:定时关机.ico ^
-  /resource:小工具箱.exe,MainExe /resource:sam_tool.zip,SamZip /resource:clean_tool.zip,CleanZip ^
-  /resource:ffmpeg_tool.zip,FfmpegZip ^
-  /out:小工具箱_安装程序.exe 安装程序.cs
-```
-
-组件压缩包均为第三方二进制的打包产物，不在本仓库内（见「第三方组件」）。
 
 ## 📁 目录结构 / Structure
 
